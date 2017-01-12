@@ -30,33 +30,3 @@ describe('My resource', function() {
         });
     });
 });
-
-/*
-This should result in a parsed object like:
-
-[
-    {
-        'describe': 'My resource',
-        'children': [
-            {
-                'describe': 'When calling foo',
-                'children': [
-                    {
-                        'it': 'should return bar',
-                        'children': []
-                    }
-                ]
-            },
-            {
-                'describe': 'When calling moo',
-                'children': [
-                    {
-                        'it': 'should return milk',
-                        'children': []
-                    }
-                ]
-            }
-        ]
-    }
-]
-*/
