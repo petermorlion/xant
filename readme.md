@@ -10,11 +10,23 @@ out the structure of your Mocha test file.
 
 ## Usage
 
+Download/clone the repository and run `npm install`.
+
 Start the application by running `node index`. Then run:
 
     parse /path/to/my/testfile.js
 
-This will print out the structure of your mocha test.
+This will print out the structure of your mocha test. For
+example:
+
+```
+MyClass
+    When calling foo
+        should return bar
+        should do something
+    When calling bar
+        should return foo
+```
 
 ## Why Theo?
 
