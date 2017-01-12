@@ -1,5 +1,8 @@
 'use strict';
 
+const acorn = require('acorn');
+const fs = require('fs');
+
 /**
  * Initialize a new `Parser` instance.
  *
@@ -8,8 +11,17 @@
  */
 
 var Parser = function() {
-  this.parse = function(argv, options) {
-    return argv + 'bar';
+  this.parse = function(argv, options, callback) {
+    fs.readFile(argv, (err, data) => {
+      if (err) throw err;
+
+      let acornOptions = {
+          sourceType : 'module'
+      };
+
+      let ast = acorn.parse(data, acornOptions);
+      callback(ast);
+    });
   }
 }
 
