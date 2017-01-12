@@ -14,8 +14,8 @@ var Printer = function () {
                 return;
             }
 
-            if (item.expression.callee.name === 'describe') {
-                printDescribe(item.expression.arguments, 0);
+            if (item.expression.callee && item.expression.callee.name === 'describe') {
+                printFunction(item.expression.arguments, 0);
             }
         });
 
