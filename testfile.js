@@ -28,5 +28,9 @@ describe('My resource', function() {
         it("should return milk", function() {
             expect(aVariable).to.eql(5);
         });
+
+        it("should not return chocolate milk", function() {
+            expect(aVariable).to.eql(5);
+        });
     });
 });

@@ -22,7 +22,7 @@ var Printer = function () {
         callback();
     }
 
-    let printDescribe = function(nodes, indent) {
+    let printFunction = function(nodes, indent) {
         let spacer = new Array(indent + 1).join(' ');
 
         if (nodes[0].type === 'Literal') {
@@ -32,9 +32,12 @@ var Printer = function () {
         if (nodes[1].type === 'FunctionExpression') {
             nodes[1].body.body.forEach(item => {
                 if (item.type === 'ExpressionStatement'
-                    && item.expression.type === 'CallExpression'
-                    && item.expression.callee.name === 'describe') {
-                        printDescribe(item.expression.arguments, indent + 4);
+                    && item.expression.type === 'CallExpression') {
+
+                        if (item.expression.callee.name === 'describe'
+                        || item.expression.callee.name === 'it') {
+                            printFunction(item.expression.arguments, indent + 4);
+                        }
                     }
             });
         }
