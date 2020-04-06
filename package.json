@@ -9,7 +9,7 @@
   "author": "Peter Morlion",
   "license": "MIT",
   "dependencies": {
-    "acorn": "^4.0.4",
+    "acorn": "^7.1.1",
     "vorpal": "^1.11.4"
   }
 }
