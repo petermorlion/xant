@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/petermorlion/xant"
   },
-  "bin": "./index.js",
+  "bin": "node ./index.js",
   "author": "Peter Morlion",
   "license": "MIT",
   "dependencies": {

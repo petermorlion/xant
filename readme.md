@@ -10,7 +10,7 @@ out the structure of your Mocha test file.
 
 ## Usage
 
-Download/clone the repository and run `npm install -g`.
+Download/clone the repository and run `npm install xant -g`.
 
 Run the application by running:
 
