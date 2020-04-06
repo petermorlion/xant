@@ -1,6 +1,6 @@
 {
   "name": "xant",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A tool to show the structure of mocha test file.",
   "main": "index.js",
   "scripts": {
