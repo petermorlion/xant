@@ -1,22 +1,23 @@
 'use strict';
 
-const vorpal = require('vorpal')();
+const yargs = require('yargs');
 const Parser = require('./parser');
 const Printer = require('./printer');
 
-vorpal
-    .command('parse <fileToParse>', 'Parses a mocha test file and outputs the structure.')
-    .action(function (args, callback) {
-        let parser = new Parser();
-        let printer = new Printer();
-
-        parser.parse(args.fileToParse, [], result => {
-            printer.print(result, [], () => {
-                callback();
+yargs
+    .command(
+        'parse <fileToParse>',
+        'Parses a mocha test file and outputs the structure.',
+        (yargs) => {
+            yargs.positional('fileToParse', {
+                describe: 'The file to parse',
+                type: 'string'
+            })
+        },
+        (argv) => {
+            let parser = new Parser();
+            let printer = new Printer();
+            parser.parse(argv.fileToParse, [], result => {
+                printer.print(result, [], () => {});
             });
-        });
-    });
-
-vorpal
-    .delimiter('theo$')
-    .show();
+        }).argv;

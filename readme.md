@@ -10,11 +10,13 @@ out the structure of your Mocha test file.
 
 ## Usage
 
-Download/clone the repository and run `npm install`.
+Download/clone the repository and run `npm install -g`.
 
-Start the application by running `node index`. Then run:
+Run the application by running:
 
-    parse /path/to/my/testfile.js
+```
+theo parse /path/to/my/testfile.js
+```
 
 This will print out the structure of your mocha test. For
 example:
